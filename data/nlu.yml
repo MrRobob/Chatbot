@@ -1,0 +1,248 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - moin
+    - guten Tag
+    - guten Morgen
+    - guten Abend
+
+- intent: goodbye
+  examples: |
+    - Tschüss
+    - Auf Wiedersehen
+    - Bis später
+    - Mach's gut
+    - Ciao
+    - Bye
+    - Adieu
+    - bis bald
+    - bis gleich
+    - bis später
+    - bis morgen
+    - bis dann
+    - bis zum nächsten Mal
+    - bis zum nächsten Treffen
+    - bis zum nächsten Gespräch
+    - bis zum nächsten Mal
+
+- intent: affirm
+  examples: |
+    - ja
+    - ja, genau
+    - klar
+    - genau
+    - sicher
+    - stimmt
+    - ja, das stimmt
+    - ja, das ist richtig
+    - ja, das ist wahr
+    - ja, das ist so
+    - ja, das ist korrekt
+    - ja, das ist richtig so
+
+- intent: deny
+  examples: |
+    - nein
+    - nie
+    - nicht wirklich
+    - auf keinen Fall
+    - nicht
+    - nein, danke
+    - nein, auf keinen Fall
+    - nein, niemals
+    - nein, das ist nicht wahr
+    - nein, das glaube ich nicht
+    - nein, das ist nicht richtig
+
+- intent: mood_great
+  examples: |
+    - ich fühle mich gut
+    - zufrieden
+    - begeistert
+    - euphorisch
+    - fröhlich
+    - gut drauf
+    - ich bin in guter Stimmung
+    - ich bin in Hochstimmung
+    - ich bin in bester Laune
+    - ich bin in Hochform
+    - ich bin in Hochstimmung
+    - glücklich
+    - super
+    - sehr gut
+    - toll
+    - fantastisch
+    - großartig
+    - wunderbar
+
+- intent: mood_unhappy
+  examples: |
+    - schlecht
+    - traurig
+    - unglücklich
+    - enttäuscht
+    - frustriert
+    - niedergeschlagen
+    - ich bin nicht gut drauf
+    - ich bin nicht in guter Stimmung
+    - ich bin nicht in Hochstimmung
+    - ich bin nicht in bester Laune
+    - ich bin nicht in Hochform
+
+
+
+- intent: bot_challenge
+  examples: |
+    - bist du ein Bot?
+    - bist du ein Roboter?
+    - bist du ein virtueller Assistent?
+    - bist du ein Computerprogramm?
+    - bist du ein Mensch?
+    - bist du ein KI-Programm?
+
+
+- intent: ask_howareyou
+  examples: |
+    - alles klar?
+    - wie geht's?
+    - wie geht es dir?
+    - na, wie läuft's?
+    - wie fühlst du dich?
+    - wie ist es dir ergangen?
+    - wie ist dein Tag?
+    - wie ist dein Tag bisher?
+    
+
+- intent: respond_howareyou_good
+  examples: |
+    - mir geht's gut
+    - alles bestens
+    - super, danke
+    - ganz okay
+    - mir geht's prima
+    - mir geht's super
+    - alles in Ordnung
+    - mir geht's fantastisch
+    - mir geht's großartig
+    - mir geht's wunderbar
+    - mir geht's blendend
+    - mir geht's hervorragend
+    - mir geht's toll
+
+- intent: respond_howareyou_bad
+  examples: |
+    - nicht so gut
+    - schon bessere Tage gehabt
+    - leider nicht so toll
+    - bin etwas gestresst
+    - mir geht's nicht so gut
+    - mir geht's schlecht
+
+
+- intent: ask_bot_name
+  examples: |
+    - wie heißt du?
+    - hast du einen Namen?
+    - was ist dein Name?
+    - wie nennst du dich?
+
+- intent: ask_bot_age
+  examples: |
+    - bist du alt?
+    - wie alt bist du?
+    - wie lange gibt es dich schon?
+    - wann wurdest du programmiert?
+    - wann bist du geboren?
+    - wann bist du entstanden?
+    - wann bist du erschaffen worden?
+    - wann bist du entwickelt worden?
+
+- intent: ask_weather
+  examples: |
+    - wie ist das Wetter?
+    - regnet es draußen?
+    - scheint die Sonne?
+    - ist es kalt?
+    - ist es warm?
+    - wie ist die Temperatur?
+    - wie ist die Wettervorhersage?
+    - wie ist die Wetterlage?
+    - wie ist die Wetterprognose?
+
+- intent: thank
+  examples: |
+    - danke
+    - danke dir
+    - vielen Dank
+    - danke schön
+    - danke vielmals
+    - danke für deine Hilfe
+    - danke für deine Unterstützung
+    - danke für deine Antwort
+    - danke für deine Zeit
+    - danke für deine Mühe
+
+- intent: welcome
+  examples: |
+    - kein Problem
+    - gern geschehen
+    - bitte schön
+    - immer wieder gern
+    - kein Ding
+    - kein Thema
+    - alles gut
+    - alles klar
+
+- intent: nenne_name
+  examples: |
+    - Ich heiße [Peter](name)
+    - Mein Name ist [Lena](name)
+    - Du kannst mich [Max](name) nennen
+    - Nenn mich einfach [Anna](name)
+    - Ich bin [Thomas](name)
+
+- intent: frage_ort
+  examples: |
+    - Ich bin in [Berlin](ort)
+    - Ich wohne in [Hamburg](ort)
+    - Ich lebe in [München](ort)
+    - Aktuell bin ich in [Köln](ort)
+    - Gerade bin ich in [Dresden](ort)
+    - Wo bin ich?
+    - Kennst du meinen Standort?
+    - Kannst du sagen, wo ich bin?
+
+
+- intent: frage_datum
+  examples: |
+    - Heute ist der [16. April](datum)
+    - Morgen ist [Montag](datum)
+    - Der Termin ist am [12. Mai](datum)
+    - Wir treffen uns am [Freitag](datum)
+    - Das Event ist am [01.01.2026](datum)
+    - Welches Datum haben wir heute?
+    - Was ist das heutige Datum?
+    - Welcher Tag ist heute?
+
+- intent: ask_favorite_color
+  examples: |
+    - Was ist deine Lieblingsfarbe?
+    - Welche Farbe magst du am liebsten?
+    - Hast du eine Lieblingsfarbe?
+
+- intent: ask_hobby
+  examples: |
+    - Was machst du in deiner Freizeit?
+    - Hast du ein Hobby?
+    - Was sind deine Hobbys?
+
+- intent: ask_creator
+  examples: |
+    - Wer hat dich gebaut?
+    - Wer hat dich programmiert?
+    - Wer ist dein Ersteller?

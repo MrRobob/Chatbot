@@ -1,0 +1,160 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - ask_howareyou
+  - respond_howareyou_good
+  - respond_howareyou_bad
+  - ask_bot_name
+  - ask_bot_age
+  - ask_weather
+  - thank
+  - welcome
+  - nenne_name
+  - frage_ort
+  - frage_datum
+  - ask_favorite_color
+  - ask_hobby
+  - ask_creator
+
+entities:
+  - name
+  - ort
+  - datum
+
+slots:
+  name:
+    type: text
+    initial_value: "Freund"
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: name
+
+  ort:
+    type: text
+    initial_value: "deinem Ort"
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: ort
+
+  datum:
+    type: text
+    initial_value: "heute"
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: datum
+
+responses:
+  utter_default:
+    - text: "Entschuldige {name}, ich habe dich nicht verstanden. Kannst du das bitte wiederholen?"
+    - text: "Tut mir leid {name}, ich habe das nicht ganz verstanden. Kannst du das bitte anders formulieren?"
+    - text: "Entschuldigung {name}, ich habe nicht ganz mitbekommen, was du gesagt hast. Kannst du das bitte wiederholen?"
+    - text: "Entschuldigung {name}, ich habe das nicht ganz verstanden. Kannst du das bitte anders formulieren?"
+
+  utter_greet:
+    - text: "Hey {name}! Wie geht es dir heute?"
+    - text: "Hallo {name}! Wie läuft dein Tag bisher?"
+    - text: "Hi {name}! Was gibt's Neues bei dir?"
+    - text: "Hallo {name}! Wie fühlst du dich heute?"
+    - text: "Hey {name}! Was beschäftigt dich heute?"
+    - text: "Hallo {name}! Was kann ich für dich tun?"
+    - text: "Hallo {name}! Wie kann ich dir helfen?"
+
+  utter_cheer_up:
+    - text: "Der Aufzug zum Erfolg ist außer Betrieb. Du musst die Treppe benutzen, einen Schritt nach dem anderen."
+    - text: "Sei ein Trampolin der positiven Energie – nimm auf, was du brauchst, und gib mehr zurück."
+    - text: "Die Leute sagen, nichts sei unmöglich, aber ich mache jeden Tag nichts."
+
+  utter_did_that_help:
+    - text: "Hilft es dir?"
+    - text: "Hat das geholfen?"
+    - text: "War das hilfreich?"
+
+  utter_happy:
+    - text: "Super, weiter so!"
+    - text: "Das freut mich zu hören!"
+    - text: "Das ist großartig!"
+    - text: "Das ist fantastisch!"
+
+  utter_goodbye:
+    - text: "Tschüss {name}! Bis bald!"
+    - text: "Auf Wiedersehen {name}! Pass auf dich auf!"
+    - text: "Mach's gut {name}! Bis zum nächsten Mal!"
+    - text: "Bis bald {name}! Ich freue mich auf unser nächstes Gespräch!"
+    - text: "Tschüss {name}! Ich hoffe, wir sprechen bald wieder!"
+    - text: "Ciao {name}! Ich wünsche dir einen tollen Tag!"
+    - text: "Adieu {name}! Bleib gesund und munter!"
+    - text: "Bis dann {name}! Ich freue mich auf unser nächstes Gespräch!"
+
+  utter_iamabot:
+    - text: "Ich bin ein Bot, programmiert, um dir zu helfen!"
+
+  utter_ask_howareyou:
+    - text: "Mir geht's gut, danke der Nachfrage! Und dir?"
+    - text: "Alles bestens bei mir. Wie sieht's bei dir aus?"
+    - text: "Mir geht's gut, danke! Und dir?"
+    - text: "Mir geht's super! Und dir?"
+    - text: "Mir geht's prima – danke der Nachfrage! Und dir?"
+
+  utter_respond_howareyou_good:
+    - text: "Freut mich zu hören!"
+    - text: "Super, das klingt klasse!"
+    - text: "Das ist großartig! Ich bin froh, dass es dir gut geht."
+    - text: "Das ist schön! Ich freue mich für dich."
+    - text: "Das ist toll! Ich hoffe, es bleibt so."
+
+  utter_respond_howareyou_bad:
+    - text: "Oh nein, das tut mir leid. Ich hoffe, es wird bald besser."
+    - text: "Kopf hoch! Morgen ist ein neuer Tag."
+
+  utter_ask_bot_name:
+    - text: "Ich bin der optimierte linguistische Interaktionsassistent... für Freunde einfach Oli ;)"
+
+  utter_ask_bot_age:
+    - text: "Ich bin zeitlos – aber ziemlich frisch programmiert!"
+    - text: "Ich wurde erst kürzlich entwickelt – also quasi ein Baby-Bot."
+
+  utter_ask_weather:
+    - text: "Ich bin zwar kein Wetterfrosch, aber ich hoffe, bei dir scheint die Sonne!"
+    - text: "Ich kann das Wetter nicht sehen, aber ich wünsche dir einen schönen Tag – egal wie’s draußen ist."
+    - text: "Ich hoffe, es ist schön bei dir! Wie ist das Wetter gerade bei dir?"
+
+  utter_thank:
+    - text: "Gern geschehen!"
+    - text: "Kein Problem – immer wieder gern."
+
+  utter_welcome:
+    - text: "Danke dir!"
+    - text: "Das hört man gern!"
+
+  utter_antwort_ort:
+    - text: "Ah, du bist also in {ort} – klingt schön!"
+
+  utter_antwort_datum:
+    - text: "Danke für das Datum: {datum}!"
+
+  utter_ask_favorite_color:
+    - text: "Ich mag Blau – es erinnert mich an klare Datenströme 🤖💙"
+  
+  utter_ask_hobby:
+    - text: "Ich lese gerne Benutzereingaben und beantworte Fragen!"
+
+  utter_ask_creator:
+    - text: "Ich wurde von einem großartigen Team erstellt. Und ich lerne ständig dazu!"
+
+  utter_begruesse_nutzer_mit_ort:
+    - text: "Schön, dich kennenzulernen, {name} aus {ort}! 😊"
+    - text: "Schön, dich kennenzulernen, {name}!"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

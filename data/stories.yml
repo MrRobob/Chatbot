@@ -1,0 +1,67 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: smalltalk how are you exchange
+  steps:
+    - intent: ask_howareyou
+    - action: utter_ask_howareyou
+    - intent: respond_howareyou_good
+    - action: utter_respond_howareyou_good
+
+- story: smalltalk name and age
+  steps:
+    - intent: ask_bot_name
+    - action: utter_ask_bot_name
+    - intent: ask_bot_age
+    - action: utter_ask_bot_age
+
+- story: Nutzer nennt Ort und Datum
+  steps:
+    - intent: frage_ort
+    - slot_was_set:
+        - ort: true
+    - action: utter_antwort_ort
+    - intent: frage_datum
+      entities:
+        - datum: 16.04.2025
+    - slot_was_set:
+        - datum: "16.04.2025"
+    - action: utter_antwort_datum
+
+- story: user nennt name und ort
+  steps:
+    - intent: nenne_name
+    - slot_was_set:
+        - name: true
+    - intent: frage_ort
+    - slot_was_set:
+        - ort: true
+    - action: utter_begruesse_nutzer_mit_ort
