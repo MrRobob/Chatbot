@@ -7,6 +7,27 @@ rules:
   - intent: goodbye
   - action: utter_goodbye
 
+- rule: user is happy
+  steps:
+  - intent: mood_great
+  - action: utter_respond_howareyou_good
+
+- rule: user is sad
+  steps:
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+
+- rule: user affirms
+  steps:
+  - intent: affirm
+  - action: utter_respond_howareyou_good
+
+- rule: user denies
+  steps:
+  - intent: deny
+  - action: utter_respond_howareyou_bad
+
 - rule: Say 'I am a bot' anytime the user challenges
   steps:
   - intent: bot_challenge
@@ -14,62 +35,40 @@ rules:
 
 - rule: Respond to how are you
   steps:
-    - intent: ask_howareyou
-    - action: utter_ask_howareyou
+  - intent: ask_howareyou
+  - action: utter_ask_howareyou
 
 - rule: User feels good
   steps:
-    - intent: respond_howareyou_good
-    - action: utter_respond_howareyou_good
+  - intent: respond_howareyou_good
+  - action: utter_respond_howareyou_good
 
 - rule: User feels bad
   steps:
-    - intent: respond_howareyou_bad
-    - action: utter_respond_howareyou_bad
+  - intent: respond_howareyou_bad
+  - action: utter_respond_howareyou_bad
 
 - rule: Ask bot name
   steps:
-    - intent: ask_bot_name
-    - action: utter_ask_bot_name
+  - intent: ask_bot_name
+  - action: utter_ask_bot_name
 
 - rule: Ask bot age
   steps:
-    - intent: ask_bot_age
-    - action: utter_ask_bot_age
+  - intent: ask_bot_age
+  - action: utter_ask_bot_age
 
 - rule: Ask weather
   steps:
-    - intent: ask_weather
-    - action: utter_ask_weather
+  - intent: ask_weather
+  - action: utter_ask_weather
 
 - rule: Thanking
   steps:
-    - intent: thank
-    - action: utter_thank
+  - intent: thank
+  - action: utter_thank
 
 - rule: You're welcome
   steps:
-    - intent: welcome
-    - action: utter_welcome
-
-- rule: Nutzer nennt Datum
-  steps:
-    - intent: frage_datum
-    - slot_was_set:
-        - datum: true
-    - action: utter_antwort_datum
-
-- rule: Ask bot favorite color
-  steps:
-    - intent: ask_favorite_color
-    - action: utter_ask_favorite_color
-
-- rule: Ask bot hobby
-  steps:
-    - intent: ask_hobby
-    - action: utter_ask_hobby
-
-- rule: Ask bot creator
-  steps:
-    - intent: ask_creator
-    - action: utter_ask_creator
+  - intent: welcome
+  - action: utter_welcome
